@@ -2,7 +2,14 @@ const MyNameApp = {
     data() { // retorna dados para a aplicação
         return {
             name: "Bruno",
-            age: 19
+            age: 19,
+            input_name: ""
+        }
+    },
+    methods: {
+        submitForm(event) {
+            event.preventDefault();
+            this.name = this.input_name;
         }
     }
 }
