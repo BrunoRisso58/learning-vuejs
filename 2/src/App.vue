@@ -14,7 +14,7 @@ import Pessoa from './components/Pessoa.vue';
         components: {
             PrimeiroComponente,
             LifeCycle,
-            Pessoa
+            Pessoa,
         }
     }
 </script>
