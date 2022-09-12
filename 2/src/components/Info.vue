@@ -3,11 +3,13 @@
         <p v-if="isWorking">Estou trabalhando no momento!</p>
         <p v-else>Estou em busca de novas oportunidades!</p>
         <div v-show="workWithTechnology">
-            <p>Utilizo as seguintes tecnologias:</p>
+            <p>Tecnologias no backend:</p>
             <ul>
-                <li>VueJS</li>
-                <li>JavaScript</li>
-                <li>CSS</li>
+                <li v-for="(technology, index) in backendTechnologies" v-bind:key="index">{{ technology }}</li>
+            </ul>
+            <p>Tecnologias no frontend:</p>
+            <ul>
+                <li v-for="technology in frontendTechnologies" v-bind:key="technology.id">{{ technology.nome }}</li>
             </ul>
         </div>
         <button @click="showOrHideEmail">{{ showEmailButtonMsg }}</button>
@@ -28,7 +30,13 @@
                 workWithTechnology: true,
                 showEmail: false,
                 showEmailButtonMsg: "Mostrar Email",
-                email: "brunorisso58@gmail.com"
+                email: "brunorisso58@gmail.com",
+                backendTechnologies: ["PHP", "Laravel", "MySQL"],
+                frontendTechnologies: [
+                    {id: 0, nome: "NuxtJS"},
+                    {id: 1, nome: "VueJS"},
+                    {id: 2, nome: "Tailwind CSS"}
+                ]
             }
         },
         components: {
