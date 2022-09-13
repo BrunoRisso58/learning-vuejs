@@ -1,5 +1,5 @@
 <template>
-    <Cabecalho />
+    <Cabecalho :isLogged="isLogged" />
     <PrimeiroComponente />
     <LifeCycle />
     <Pessoa />
@@ -18,6 +18,11 @@ import Cabecalho from './components/Cabecalho.vue';
             LifeCycle,
             Pessoa,
             Cabecalho
+        },
+        data() {
+            return {
+                isLogged: true
+            }
         }
     }
 </script>

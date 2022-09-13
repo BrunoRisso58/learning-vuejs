@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>{{ compEmail }} - {{ email }}</p>
+        <p>{{ email }}</p>
         <p v-if="isWorking">Estou trabalhando no momento!</p>
         <p v-else>Estou em busca de novas oportunidades!</p>
         <div v-show="workWithTechnology">
@@ -27,11 +27,9 @@
         data() {
             return {
                 age: 19,
-                isWorking: true,
                 workWithTechnology: true,
                 showEmail: false,
                 showEmailButtonMsg: "Mostrar Email",
-                email: "brunorisso79@email.com",
                 backendTechnologies: ["PHP", "Laravel", "MySQL"],
                 frontendTechnologies: [
                     {id: 0, nome: "NuxtJS"},
@@ -41,7 +39,8 @@
             }
         },
         props: {
-            compEmail: String
+            email: String,
+            isWorking: Boolean
         },
         components: {
             Picture
