@@ -1,5 +1,6 @@
 <template>
     <div>
+        <p>{{ compEmail }} - {{ email }}</p>
         <p v-if="isWorking">Estou trabalhando no momento!</p>
         <p v-else>Estou em busca de novas oportunidades!</p>
         <div v-show="workWithTechnology">
@@ -30,7 +31,7 @@
                 workWithTechnology: true,
                 showEmail: false,
                 showEmailButtonMsg: "Mostrar Email",
-                email: "brunorisso58@gmail.com",
+                email: "brunorisso79@email.com",
                 backendTechnologies: ["PHP", "Laravel", "MySQL"],
                 frontendTechnologies: [
                     {id: 0, nome: "NuxtJS"},
@@ -38,6 +39,9 @@
                     {id: 2, nome: "Tailwind CSS"}
                 ]
             }
+        },
+        props: {
+            compEmail: String
         },
         components: {
             Picture
